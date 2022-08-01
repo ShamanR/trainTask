@@ -1,0 +1,11 @@
+# once per day prepare users for validate
+0 4 * * * php /app/cron.php --task emailValidate.findEmailsForValidate
+
+# every hour validate email: worker1
+1 * * * * php /app/cron.php --task emailValidate.emailValidateWorker
+# every hour validate email: worker2
+1 * * * * php /app/cron.php --task emailValidate.emailValidateWorker
+# every hour validate email: worker3
+1 * * * * php /app/cron.php --task emailValidate.emailValidateWorker
+# every hour validate email: worker4
+1 * * * * php /app/cron.php --task emailValidate.emailValidateWorker
